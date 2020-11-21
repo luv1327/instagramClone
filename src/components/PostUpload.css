@@ -1,0 +1,87 @@
+.postUpload__container {
+    background-color :white;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.postUpload__section {
+    background-color :#FAFAFA;
+    border : 1px solid rgb(211, 211, 211);
+    padding : 20px 5px;
+    width: 500px;
+    height: auto;
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+    margin : 0 auto;
+    margin-top: 50px;
+}
+
+.postUpload__instagramLogo {
+    object-fit: contain;
+    width : 220px;
+    border : 1px solid white;
+}
+
+.postUpload__inputSection {
+    width : 100%;
+    padding : 5px;
+    display : flex;
+    align-items: center;
+    flex-direction:column;
+    margin-top: 30px;
+}
+
+.postUpload{
+    width : 70%;
+    margin-bottom: 20px;
+    outline : none;
+    border : 1px solid lightgrey;
+    padding : 5px;
+    border-radius: 5px;
+}
+
+.postUpload__caption {
+    height: 50px;
+}
+
+.postUpload__caption::placeholder {
+    text-align: center;
+}
+
+.postUpload__progressBar {
+    padding : 5px;
+    background-color: white;
+}
+
+.postUpload__button {
+    background-color : #0095F6;
+    color : #fff;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.postUpload__chooseFile {
+    border: 1px solid #0095F6;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+
+progress[value]::-webkit-progress-bar{
+    background-color: white;
+}
+
+.postUpload__goBackBtn{
+    outline: none;
+    text-decoration: none;
+    border : 1px solid lightgrey;
+    padding: 3px 9px;
+    color : black
+}

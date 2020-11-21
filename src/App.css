@@ -1,38 +1,175 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .App {
+  background-color:#FAFAFA;
+  font-family: 'Roboto Condensed', sans-serif;
+  height: 100vh;
+}
+
+
+
+.app__instagramLogo{
+  object-fit: contain;
+  width:200px;
+}
+.app__formContainer {
+  width : 60%;
+  margin : 30px auto 0px auto;
+  display :flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  border : 1px solid rgb(214, 214, 214);
+}
+.app__wholeForm {
+  padding: 20px;
+  width: 90%;
+  background-color: white;
+}
+
+.app__formBody {
+  height: 100vh;
+  background-color: #FAFAFA;
+  padding: 1px;
+  /* overflow: hidden; */
+}
+
+.app__form {
+  display: flex;
+  flex-direction: column;
+  width : 90%;
+  margin : 0 auto;
+}
+
+.app__formOption {
+  text-align: center;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  width : 70%;
+  margin : 0 auto;
+  margin-top: 30px;
+}
+
+
+.input {
+  padding :5px;
+  margin : 0 auto;
+  outline : none;
+  border : 1px solid rgb(194, 194, 194);
+  margin-bottom : 10px;
+  width: 70%;
+  border-radius: 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.input::placeholder {
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* .input:focus {
+  text-align: center;
+} */
+
+.button {
+  width : 70%;
+  padding : 5px 9px;
+  background-color: #0095F6;
+  color : #fff;
+  font-size :14px;
+  border-radius : 5px;
+  border: none;
+  margin:0 auto;
+  outline: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px lightgrey;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.button:active {
+  transform: translateY(2px);
 }
 
-.App-link {
-  color: #61dafb;
+.app__loginAndSignUpButton{
+  width : 30%;
+  margin-top: 5px;
+  background-color: #fff;
+  color: #0095F6;
+  border : 1px solid #0095F6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app__loginAndSignUpText{
+  color: rgb(92, 92, 92);
+}
+
+.app__alreadyLoggedIn{
+  border-bottom : 1px solid #bebdbd;
+  text-align: center;
+  width : 80%;
+  margin : 0 auto;
+  padding : 20px 5px;
+}
+
+.sk-chase {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  animation: sk-chase 2.5s infinite linear both;
+}
+
+.sk-chase-dot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; 
+  animation: sk-chase-dot 2.0s infinite ease-in-out both; 
+}
+
+.sk-chase-dot:before {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 25%;
+  background-color:#0095F6;
+  border-radius: 100%;
+  animation: sk-chase-dot-before 2.0s infinite ease-in-out both; 
+}
+
+.sk-chase-dot:nth-child(1) { animation-delay: -1.1s; }
+.sk-chase-dot:nth-child(2) { animation-delay: -1.0s; }
+.sk-chase-dot:nth-child(3) { animation-delay: -0.9s; }
+.sk-chase-dot:nth-child(4) { animation-delay: -0.8s; }
+.sk-chase-dot:nth-child(5) { animation-delay: -0.7s; }
+.sk-chase-dot:nth-child(6) { animation-delay: -0.6s; }
+.sk-chase-dot:nth-child(1):before { animation-delay: -1.1s; }
+.sk-chase-dot:nth-child(2):before { animation-delay: -1.0s; }
+.sk-chase-dot:nth-child(3):before { animation-delay: -0.9s; }
+.sk-chase-dot:nth-child(4):before { animation-delay: -0.8s; }
+.sk-chase-dot:nth-child(5):before { animation-delay: -0.7s; }
+.sk-chase-dot:nth-child(6):before { animation-delay: -0.6s; }
+
+@keyframes sk-chase {
+  100% { transform: rotate(360deg); } 
+}
+
+@keyframes sk-chase-dot {
+  80%, 100% { transform: rotate(360deg); } 
+}
+
+@keyframes sk-chase-dot-before {
+  50% {
+    transform: scale(0.4); 
+  } 100%, 0% {
+    transform: scale(1.0); 
+  } 
 }
