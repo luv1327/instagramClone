@@ -9,6 +9,8 @@ import React from 'react'
 // import Forms from './components/Forms'
 import Posts from './components/Posts'
 import PostUpload from './components/PostUpload'
+import LoginForm from './components/LoginForm'
+import SignInForm from './components/SignInForm'
 
 function App() {
   const [email,setEmail] = useState('')
@@ -57,63 +59,37 @@ function App() {
     .catch(err=>alert(err.message))
   }
 
+  const handleUsername = (event)=>{
+    setUsername(event.target.value)
+  }
+
+  const handleEmail = (event)=>{
+    setEmail(event.target.value)
+  }
+  
+  const handlePassword = (event)=>{
+    setPassword(event.target.value)
+  }
+
   const handleLogout = ()=>{
      auth.signOut()
     window.location = '/'
   }
-
-  const login =  <form className='app__loginForm app__form'>
-                  <input 
-                    type='text' 
-                    id='email'
-                    name='email'
-                    className='app__loginEmail input'
-                    value={email}
-                    placeholder='Email'
-                    onChange={(event)=>setEmail(event.target.value)}
-                  ></input>
-                  <input 
-                    type='password' 
-                    id='password'
-                    name='password'
-                    value={password}
-                    className='app__loginPassword input'
-                    placeholder='Password'
-                    onChange={(event)=>setPassword(event.target.value)}
-                  ></input>
-                  <button onClick={handleLogin} className='app__loginButton button'>Log In</button>
-                  </form>
-  const signup =  <form className='app__signinForm app__form'>
-                  <input 
-                    type='text' 
-                    id='email'
-                    name='email'
-                    className='app__signInEmail input'
-                    value={email}
-                    placeholder='Email'
-                    onChange={(event)=>setEmail(event.target.value)}
-                  ></input>
-                  <input 
-                    type='text'
-                    id='username'
-                    name='username'
-                    value={username}
-                    className='app__signInUsername input' 
-                    placeholder='Username'
-                    onChange={(event)=>setUsername(event.target.value)}
-                  ></input>
-                  <input 
-                    type='password' 
-                    id='password'
-                    name='password'
-                    value={password}
-                    className='app__signInPassword input'
-                    placeholder='Password'
-                    onChange={(event)=>setPassword(event.target.value)}
-                  ></input>
-                  <button className='app__signInButton button' onClick={handleSignUp}>Sign In</button>
-                  </form>
-  const isLogin = loginForm ? login : signup
+  const isLogin = loginForm ? <LoginForm 
+                                email={email} 
+                                password={password} 
+                                handleEmail={handleEmail} 
+                                handlePassword={handlePassword} 
+                                handleLogin={handleLogin}/> 
+                              :<SignInForm 
+                                email={email} 
+                                handleUsername={handleUsername}
+                                username={username}
+                                password={password} 
+                                handleEmail={handleEmail} 
+                                handlePassword={handlePassword} 
+                                handleSignUp={handleSignUp}
+                              /> 
   const buttonText = loginForm ? 
                     <div className="app__loginAndSignUpButtonAndText" >
                       {isLogin}
